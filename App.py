@@ -3,6 +3,9 @@ This is python GUI made out of tkinter
 it is a quiz application
 
 Developed by Akhil Krishna in 2021
+
+Lot of rework is needed to make it properly oriented to exact window size
+currently under construction
 """
 
 from tkinter import *
