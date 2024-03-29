@@ -27,11 +27,11 @@ def front():
         fwin.destroy()
 
     g = PhotoImage(file='3.png')
-    l = Label(fwin, image=g, height=1400).place(x=-130, y=-250)
+    l = Label(fwin, image=g, height=1200).place(x=-130, y=-250)
     #	log=PhotoImage(file='zz.png')
     #	labf=Label(fwin,image=log,width=355,height=335).place(x=160,y=500)
     learn = Label(fwin, text='   LEARN TO CODE   ', fg='aqua', bg='black', font=ffnt, bd=5, relief='raised', width=15)
-    learn.place(x=150, y=890)
+    learn.place(x=150, y=700)
 
     start = Button(fwin, text='START', fg='white', activeforeground='white', activebackground='light green',
                    bg='light green', bd=10, font=ffnt, command=start)
@@ -78,9 +78,9 @@ def chodi():
                                                                                                                y=750)
 
     Label(loo, text='Through which mode did you \nopen this App UI?', bg='black', fg='white',
-          font=Font(family='arial', size=10, weight='bold')).place(x=110, y=300)
-    Button(loo, text='Mobile', bg='white', command=m).place(x=200, y=500)
-    Button(loo, bg='white', text='PC/Lap', command=l).place(x=400, y=500)
+          font=Font(family='arial', size=10, weight='bold')).place(x=110, y=100)
+    Button(loo, text='Mobile', bg='white', command=m).place(x=200, y=300)
+    Button(loo, bg='white', text='PC/Lap', command=l).place(x=400, y=300)
 
     loo.mainloop()
 
@@ -114,10 +114,10 @@ def signup():
             signwin.destroy()
         elif x == 0 or ln == '' or fn == '' or age == "":
             inst = Label(signwin, text='*Please fill all informations', fg='red', bg='white')
-            inst.place(x=110, y=526)
+            inst.place(x=110, y=326)
         else:
             inst = Label(signwin, text="*Please provide correct data", fg='red', bg='white')
-            inst.place(x=110, y=526)
+            inst.place(x=110, y=326)
 
     fnt = Font(family='Arial'
                , size=13, weight='bold', underline=0)
@@ -127,30 +127,30 @@ def signup():
     bg = PhotoImage(file='Logo1.png')
     ls = Label(signwin, image=bg, width=300, height=300).place(x=210, y=50)
     head = Label(signwin, text='Registration Form', fg='grey', font=fnt, bg='white', bd=6, relief='solid', width=20,
-                 height=2).place(x=90, y=380)
+                 height=2).place(x=90, y=280)
 
-    name = Label(signwin, text='First Name ', bg='grey', fg='white', font=fnt1, width=10).place(x=115, y=570)
-    dot1 = Label(signwin, text=':', font=fnt, bg="white").place(x=335, y=565)
+    name = Label(signwin, text='First Name ', bg='grey', fg='white', font=fnt1, width=10).place(x=115, y=470)
+    dot1 = Label(signwin, text=':', font=fnt, bg="white").place(x=335, y=465)
     ntake = Entry(signwin, width=15)
-    ntake.place(x=360, y=575)
+    ntake.place(x=360, y=475)
 
-    name2 = Label(signwin, text=' Last Name ', bg='grey', fg='white', font=fnt1).place(x=115, y=670)
-    dot2 = Label(signwin, text=':', font=fnt, bg="white").place(x=335, y=663)
+    name2 = Label(signwin, text=' Last Name ', bg='grey', fg='white', font=fnt1).place(x=115, y=570)
+    dot2 = Label(signwin, text=':', font=fnt, bg="white").place(x=335, y=563)
     ntake2 = Entry(signwin, width=15)
-    ntake2.place(x=358, y=675)
+    ntake2.place(x=358, y=575)
 
-    Age = Label(signwin, text='      Age         ', bg='grey', fg='white', font=fnt1).place(x=115, y=770)
-    dot3 = Label(signwin, text=':', font=fnt, bg="white").place(x=335, y=765)
+    Age = Label(signwin, text='      Age         ', bg='grey', fg='white', font=fnt1).place(x=115, y=670)
+    dot3 = Label(signwin, text=':', font=fnt, bg="white").place(x=335, y=665)
     ntake3 = Entry(signwin, width=15)
-    ntake3.place(x=358, y=775)
+    ntake3.place(x=358, y=675)
 
-    gender = Label(signwin, text='    Gender    ', font=fnt1, bg='grey', fg='white').place(x=115, y=875)
-    dot4 = Label(signwin, text=':', font=fnt, bg="white").place(x=335, y=865)
-    r1 = Radiobutton(signwin, text='Male', bg='white', value=1, variable=gen).place(x=360, y=875)
-    r1 = Radiobutton(signwin, text='Female', bg='white', value=2, variable=gen).place(x=520, y=875)
+    gender = Label(signwin, text='    Gender    ', font=fnt1, bg='grey', fg='white').place(x=115, y=700)
+    dot4 = Label(signwin, text=':', font=fnt, bg="white").place(x=335, y=705)
+    r1 = Radiobutton(signwin, text='Male', bg='white', value=1, variable=gen).place(x=360, y=710)
+    r1 = Radiobutton(signwin, text='Female', bg='white', value=2, variable=gen).place(x=520, y=720)
 
     sub = Button(signwin, text='SUBMIT', fg='white', bg='black', activebackground='black', activeforeground='white',
-                 font=fnt1, command=submit).place(x=280, y=1000)
+                 font=fnt1, command=submit).place(x=280, y=750)
 
     signwin.mainloop()
 
@@ -618,6 +618,7 @@ i = 1
 
 def instruction():
     iwin = Tk()
+    iwin.geometry("600x800")
     iwin.title('AK Module')
     iwin['bg'] = 'white'
     ilab = Label(iwin, text='Instructions for Quiz', bg='#006666', fg='white', height=2, width=20, bd=10,
@@ -694,6 +695,7 @@ t = 15
 def quiz():
     global name, t, mycon, cursor, score, lques, opt
     win = Tk()
+    win.geometry("600x800")
 
     def release():
 
@@ -894,7 +896,7 @@ def result():
     global score, name1
 
     rwin = Tk()
-
+    rwin.geometry("600x800")
     def c():
         global name1
         rwin.destroy()
